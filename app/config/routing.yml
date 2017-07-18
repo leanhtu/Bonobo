@@ -1,0 +1,39 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+login_homepage:
+  pattern: /login
+  defaults: { _controller: AppBundle:User:login}
+
+list:
+  pattern: /list/{id}
+  defaults: { _controller: AppBundle:User:affiche}
+
+inscription:
+  pattern: /inscription
+  defaults: { _controller: AppBundle:Inscription:form}
+
+logout:
+  pattern: /logout
+  defaults: { _controller: AppBundle:User:logout}
+
+information:
+  pattern: /information
+  defaults: { _controller: AppBundle:User:information}
+
+user_edit:
+  pattern: /edit{id}
+  defaults: { _controller: AppBundle:Inscription:edit}
+
+user_delete:
+  pattern: /delete/{id1}
+  defaults: { _controller: AppBundle:User:delete}
+
+user_cherche:
+  pattern: /find
+  defaults: { _controller: AppBundle:User:find}
+
+user_addFriend:
+  pattern: /add
+  defaults: { _controller: AppBundle:User:addFriend}

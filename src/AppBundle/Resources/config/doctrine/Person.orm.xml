@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Person" table="person">
+    <id name="userId" type="integer" column="user_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userName" type="string" column="user_name" length="255" nullable="false"/>
+    <field name="userPassword" type="string" column="user_password" length="255" nullable="true"/>
+    <field name="userAge" type="integer" column="user_age" nullable="true"/>
+    <field name="userFamille" type="string" column="user_famille" length="255" nullable="true"/>
+    <field name="userRace" type="string" column="user_race" length="255" nullable="true"/>
+    <field name="userNourriture" type="string" column="user_nourriture" length="255" nullable="true"/>
+  </entity>
+</doctrine-mapping>

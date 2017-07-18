@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+	
+		<h1> Hello {{name}}</h1>
+		<h3><a href="{{ path('logout') }}">Logout</a></h3>
+		<h3>Your Information</h3>
+		<ul>
+			<li>Id : {{id}}</li>
+			<li>Name : {{name}}</li>
+			<li>Age : {{age}}</li>
+			<li>Famille : {{famille}}</li>
+			<li>Race : {{race}}</li>
+		</ul>
+		<i><a href="{{path('user_edit', {'id':id}) }}">Modify information</a></i>
+		<h3><a href="{{ path('list',{'id':id}) }}">List friends</a></h3>
+		<form method="POST" action="{{path('user_cherche')}}">
+			<h2>You can find new friend by name</h2>
+			<input type="text" name="username" placeholder="Name">
+			<button type="submit">Find</button>
+		</form>
+		<form method="POST" action="{{path('user_addFriend')}}">
+			<h2>Add your friend</h2>
+			<p>Your id : <input type="text" name="userid1" placeholder="Your id">
+			<p>Id of your friend : <input type="text" name="userid2" placeholder="Id of your friend">
+			<button type="submit">Add</button>
+		</form>
+		
+	</body>
+</html>

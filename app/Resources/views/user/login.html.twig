@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<form method="POST" action="{{path('login_homepage')}}">
+			<h2>Signin now</h2>
+			<input type="text" name="username" placeholder="Name">
+			<input type="password" name="password" placeholder="Password">
+			<input type="checkbox" name="remember" value="remember_me">Remember-me
+			<button type="submit">Sign in</button>
+		</form>
+		<p><a href="{{ path('inscription')}}">Create new account</a></p>
+		
+	</body>
+</html>

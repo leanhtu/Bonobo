@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+    </head>
+    <body>
+        <h1>Liste Ami(e)s</h1>
+
+        <table style='border: solid;'>
+        	<tr>
+        		<td>Name</td>
+        		<td>Age</td>
+        		<td>Famille</td>
+        		<td>Race</td>
+        		<td>Delete</td>
+        	</tr>
+        	
+            {% for post in posts %}
+            	<tr>
+                	<td>{{ post.userName }}</td>
+                	<td>{{ post.userAge }}</td>
+                	<td>{{ post.userFamille }}</td>
+                	<td>{{ post.userRace }}</td>
+                	<td><a href="{{ path('user_delete',{'id1':post.userId}) }}">Delete </a></td>
+                </tr>
+            {% endfor %}
+            
+        </table>
+    </body>
+</html>
