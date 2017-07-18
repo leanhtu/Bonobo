@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class UserController extends Controller{
     
-
+//function login
     public function loginAction(Request $request)
   {
      if($request->getMethod()=='POST')
@@ -50,7 +50,7 @@ class UserController extends Controller{
      return $this->render(':User:login.html.twig');  
   }
 
-
+//function logout
     public function logoutAction()
     {
         $session = $this->getRequest()->getSession();
@@ -59,7 +59,7 @@ class UserController extends Controller{
     }
 
 
-
+//function afficher la liste d'amis
     public function afficheAction($id)
     {
         $repository = $this->getDoctrine()->getRepository('AppBundle:User');
@@ -75,7 +75,8 @@ class UserController extends Controller{
             'posts' => $posts
             ]);
     }
-    
+
+//function delete amis
     public function deleteAction($id1)
     {
         $em=$this->getDoctrine()->getEntityManager();
@@ -86,6 +87,7 @@ class UserController extends Controller{
         return new Response('User delete');
     }   
 
+//function chercher un ami par name
     public function findAction(Request $request)
     {
         if($request->getMethod()=='POST')
@@ -112,6 +114,8 @@ class UserController extends Controller{
   }        
    
 }
+     
+//function ajouter un ami(e)
      public function addFriendAction(Request $request)
     {
         if($request->getMethod()=='POST')
